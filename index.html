@@ -7,6 +7,13 @@
   <title>Marobert – associació inclusiva</title>
   <meta name="description" content="Estàs a punt de visitar el nou web de Marobert. Fes clic per accedir a marobert.org!">
 
+  <!-- Metadades Open Graph per a compartir a xarxes socials -->
+  <meta property="og:title" content="Marobert – associació inclusiva">
+  <meta property="og:description" content="Descobreix el web oficial de Marobert i les seves activitats accessibles al mar per a tothom.">
+  <meta property="og:image" content="https://info.marobert.org/logoblanc.png">
+  <meta property="og:url" content="https://info.marobert.org">
+  <meta property="og:type" content="website">
+
   <!-- Font League Spartan -->
   <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&display=swap" rel="stylesheet">
 
@@ -16,7 +23,7 @@
       --primary-color-hover: #008AC2;
       --overlay-color: rgba(0, 0, 0, 0.55);
       --font-family: 'League Spartan', sans-serif;
-      --redirect-seconds: 5;
+      --redirect-seconds: 2;
     }
 
     html, body {
@@ -74,12 +81,13 @@
       background: var(--primary-color);
       color: #fff;
       text-decoration: none;
-      border-radius: 0.3rem;
-      transition: background 0.3s;
+      border-radius: 1rem;
+      transition: background 0.3s, transform 0.2s;
     }
 
     .btn:hover {
       background: var(--primary-color-hover);
+      transform: scale(1.04);
     }
 
     .spinner {
@@ -128,22 +136,22 @@
 
       <!-- Frases SEO ocultes -->
       <p class="visually-hidden">
-        Marobert és una associació sense ànim de lucre que fa accessible el mar per a tothom amb activitats inclusives, vela adaptada i sortides setmanals.
+        Marobert és una associació sense ànim de lucre amb base a Vilanova i la Geltrú que facilita l’accés al mar per a persones amb discapacitat a través de sortides inclusives i vela adaptada.
       </p>
       <p class="visually-hidden">
-        Descobreix l’accessibilitat al mar com mai abans: Marobert promou la navegació inclusiva per a persones amb discapacitat i col·lectius vulnerables.
+        Participa a activitats accessibles a Vilanova i la Geltrú: sortides en vaixell, navegació inclusiva i experiències de mar obertes a tothom.
       </p>
       <p class="visually-hidden">
-        Participa a les nostres activitats adaptades i viu l’experiència del mar amb seguretat, companyonia i esperit comunitari.
+        Marobert ofereix experiències al mar adaptades a persones amb mobilitat reduïda des de Vilanova i la Geltrú, fomentant la inclusió i la connexió amb la natura.
       </p>
     </div>
   </div>
 
   <script>
-    // Redirecció després de 5 segons
+    // Redirecció després de 2 segons
     setTimeout(() => {
       window.location.href = 'https://marobert.org';
-    }, 5000);
+    }, 2000);
   </script>
 </body>
 </html>
