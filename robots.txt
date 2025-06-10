@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://info.marobert.org/sitemap.xml
