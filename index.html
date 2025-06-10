@@ -5,53 +5,94 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Marobert – Aviat disponible a marobert.org</title>
   <meta name="description" content="Estàs a punt de visitar el nou web de Marobert. Fes clic per accedir a marobert.org!">
-  <!-- Open Graph per a compartir a xarxes -->
-  <meta property="og:title" content="Marobert – Aviat disponible a marobert.org">
-  <meta property="og:description" content="Estàs a punt de visitar el nou web de Marobert. Fes clic per accedir a marobert.org!">
-  <meta property="og:image" content="https://la-teva-dominí/imatge-social.png">
-  <link rel="canonical" href="https://landing.marobert.org/">
+  <!-- Importar League Spartan des de Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    /* CSS minimal per al splash */
-    html, body { margin:0; padding:0; height:100%; font-family: sans-serif; }
+    :root {
+      /* Reemplaça aquest valor pel teu color corporatiu exacte (hex o rgb) */
+      --primary-color: #00AEF0;
+      --primary-color-hover: #004488;
+      --overlay-color: rgba(0, 0, 0, 0.5);
+      --font-family: 'League Spartan', sans-serif;
+    }
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: var(--font-family);
+    }
     .hero {
-      background: url('https://la-teva-dominí/fons-hero.jpg') center/cover no-repeat;
+      /* Fes servir la teva imatge de fons local: puja-la al servidor i posa aquí la ruta correcta */
+      background: url('fons.jpg') center/cover no-repeat;
       position: relative;
-      height:100%;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      text-align:center;
-      color:white;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
     }
     .overlay {
-      position:absolute; top:0; left:0; right:0; bottom:0;
-      background: rgba(0,0,0,0.5);
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: var(--overlay-color);
     }
     .content {
-      position: relative; z-index:1; padding: 1rem;
+      position: relative;
+      z-index: 1;
+      padding: 1rem;
+      max-width: 90%;
     }
-    h1 { font-size: 2.5rem; margin-bottom:0.5rem; }
-    p { font-size:1.1rem; margin-bottom:1.5rem; }
+    .logo {
+      /* Posa aquí el teu logo local: puja'l i ajusta ruta/nombre */
+      max-width: 200px;
+      height: auto;
+      margin-bottom: 1rem;
+    }
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    }
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+    }
     .btn {
-      display:inline-block;
-      padding:0.8rem 1.5rem;
-      font-size:1rem;
-      background: #ff6600;
-      color:#fff;
-      text-decoration:none;
+      display: inline-block;
+      padding: 0.8rem 1.5rem;
+      font-size: 1rem;
+      background: var(--primary-color);
+      color: #fff;
+      text-decoration: none;
       border-radius: 0.3rem;
-      transition: background .3s;
+      transition: background 0.3s;
     }
-    .btn:hover { background: #e65500; }
+    .btn:hover {
+      background: var(--primary-color-hover);
+    }
+    @media (min-width: 768px) {
+      h1 { font-size: 3rem; }
+      p  { font-size: 1.2rem; }
+      .btn { padding: 1rem 2rem; font-size: 1.1rem; }
+    }
   </style>
 </head>
 <body>
   <div class="hero">
     <div class="overlay"></div>
     <div class="content">
+      <!-- Canvia "logo.png" per la ruta al teu fitxer de logo local -->
+      <img src="logo.png" alt="Logo Marobert" class="logo">
+
       <h1>Benvingut a Marobert</h1>
       <p>Estàs a punt de visitar el nostre lloc oficial: <strong>marobert.org</strong></p>
       <a href="https://marobert.org" class="btn">Accedeix ara</a>
+
+      <noscript>
+        <p>Si no es redirigeix automàticament, <a href="https://marobert.org" style="color: var(--primary-color);">fes clic aquí</a>.</p>
+      </noscript>
     </div>
   </div>
 
