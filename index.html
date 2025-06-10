@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Marobert- associació inclusiva</title>
+  <title>Marobert – associació inclusiva</title>
   <meta name="description" content="Estàs a punt de visitar el nou web de Marobert. Fes clic per accedir a marobert.org!">
 
   <!-- Font League Spartan -->
@@ -11,11 +11,11 @@
 
   <style>
     :root {
-      --primary-color: #00AEF0;          /* Blau corporatiu */
-      --primary-color-hover: #008AC2;    /* Blau lleugerament més fosc per al hover */
-      --overlay-color: rgba(0, 0, 0, .55);
+      --primary-color: #00AEF0;
+      --primary-color-hover: #008AC2;
+      --overlay-color: rgba(0, 0, 0, 0.55);
       --font-family: 'League Spartan', sans-serif;
-      --redirect-seconds: 5;             /* Segons abans de redirigir */
+      --redirect-seconds: 5;
     }
 
     html, body {
@@ -24,7 +24,6 @@
       font-family: var(--font-family);
     }
 
-    /* HERO amb foto de fons – adapta la ruta si cal */
     .hero {
       background: url('Fons Mar Obert.jpg') center/cover no-repeat;
       position: relative;
@@ -33,51 +32,70 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      color: #fff;
+      color: white;
     }
+
     .overlay {
       position: absolute;
       inset: 0;
       background: var(--overlay-color);
     }
 
-    /* CONTINGUT */
     .content {
       position: relative;
       z-index: 1;
       padding: 1rem;
       max-width: 90%;
     }
+
     .logo {
       max-width: 200px;
       height: auto;
       margin-bottom: 1rem;
     }
+
     h1 {
       font-size: 2.5rem;
       margin: 0 0 .5rem;
-      text-shadow: 0 2px 4px rgba(0,0,0,.5);
+      text-shadow: 0 2px 4px rgba(0,0,0,0.5);
     }
+
     p {
       font-size: 1.1rem;
       margin-bottom: 1.5rem;
-      text-shadow: 0 1px 3px rgba(0,0,0,.5);
+      text-shadow: 0 1px 3px rgba(0,0,0,0.5);
     }
 
-    /* BOTÓ */
     .btn {
       display: inline-block;
-      padding: .8rem 1.5rem;
+      padding: 0.8rem 1.5rem;
       font-size: 1rem;
       background: var(--primary-color);
       color: #fff;
       text-decoration: none;
-      border-radius: .3rem;
-      transition: background .3s;
+      border-radius: 0.3rem;
+      transition: background 0.3s;
     }
-    .btn:hover { background: var(--primary-color-hover); }
 
-    /* RESPONSIVE */
+    .btn:hover {
+      background: var(--primary-color-hover);
+    }
+
+    #countdown {
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+    }
+
+    .visually-hidden {
+      position: absolute;
+      left: -9999px;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
     @media (min-width: 768px) {
       h1 { font-size: 3rem; }
       p  { font-size: 1.2rem; }
@@ -97,21 +115,29 @@
       <p>Estàs a punt de visitar el nostre lloc oficial: <strong>marobert.org</strong></p>
 
       <a href="https://marobert.org" class="btn">Accedeix ara</a>
-      <p id="countdown" style="margin-top:1rem;font-size:.9rem;text-shadow:0 1px 2px rgba(0,0,0,.5);">
-        Seràs redirigit en <span id="seconds">5</span> segons…
-      </p>
+      <p id="countdown">Seràs redirigit en <span id="seconds">5</span> segons…</p>
 
       <noscript>
         <p>Si no es redirigeix automàticament, <a href="https://marobert.org" style="color:var(--primary-color);">fes clic aquí</a>.</p>
       </noscript>
+
+      <!-- Frases SEO ocultes -->
+      <p class="visually-hidden">
+        Marobert és una associació sense ànim de lucre que fa accessible el mar per a tothom amb activitats inclusives, vela adaptada i sortides setmanals.
+      </p>
+      <p class="visually-hidden">
+        Descobreix l’accessibilitat al mar com mai abans: Marobert promou la navegació inclusiva per a persones amb discapacitat i col·lectius vulnerables.
+      </p>
+      <p class="visually-hidden">
+        Participa a les nostres activitats adaptades i viu l’experiència del mar amb seguretat, companyonia i esperit comunitari.
+      </p>
     </div>
   </div>
 
   <script>
-    /* Compte enrere i redirecció */
     (function () {
       const secs = parseInt(getComputedStyle(document.documentElement)
-                    .getPropertyValue('--redirect-seconds')) || 5;
+        .getPropertyValue('--redirect-seconds')) || 5;
       let remaining = secs;
       const span = document.getElementById('seconds');
 
