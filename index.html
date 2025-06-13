@@ -45,10 +45,12 @@
       background: url('Fons Mar Obert.jpg') center/cover no-repeat;
       position: relative;
       height: 100vh;
+      width: 100vw;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
+      overflow: hidden;
     }
 
     .overlay {
@@ -74,10 +76,12 @@
       font-size: 2.5rem;
       margin: 0 0 0.5rem;
       text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+      word-break: break-word;
     }
 
-    h2 span {
+    h2 {
       display: block;
+      white-space: pre-line;
     }
 
     p {
@@ -123,6 +127,10 @@
       p  { font-size: 1.2rem; }
       .btn { padding: 1rem 2rem; font-size: 1.1rem; }
     }
+
+    .seo-hidden {
+      display: none;
+    }
   </style>
 </head>
 
@@ -136,7 +144,7 @@
 
     <div class="content">
       <img src="logoblanc.png" alt="Logo Mar Obert" class="logo">
-      <h2><span>Benvingut a</span><span>Mar Obert</span></h2>
+      <h2>Benvingut a\nMar Obert</h2>
       <p>Associació de navegació adaptada i activitats inclusives per a persones amb discapacitat a <strong>Vilanova i la Geltrú</strong>.</p>
 
       <a href="https://marobert.org" class="btn">Accedeix al web oficial</a>
@@ -153,8 +161,8 @@
         autoplay>
       </dotlottie-player>
 
-      <!-- Text SEO invisible però indexable -->
-      <div style="height: 0; width: 0; overflow: hidden; position: absolute;">
+      <!-- Text SEO ocult -->
+      <div class="seo-hidden">
         <p><strong>Mar Obert</strong> promou la inclusió social a través d’activitats al mar. Organitzem <strong>sortides en vaixell adaptades</strong>, <strong>vela inclusiva</strong> i tallers per fomentar el benestar i l’accessibilitat.</p>
         <p>Si busques una <strong>associació inclusiva</strong> de mar a Catalunya, Mar Obert és el teu port segur. Participa, col·labora o fes-te voluntari!</p>
       </div>
@@ -162,7 +170,7 @@
   </main>
 
   <!-- Àudio ambiental -->
-  <audio id="background-audio" autoplay loop>
+  <audio id="background-audio" loop>
     <source src="/audioweb.mp3" type="audio/mpeg">
   </audio>
 
@@ -194,10 +202,17 @@
     // Control de l'àudio
     const audio = document.getElementById("background-audio");
     const toggleBtn = document.getElementById("toggle-audio");
+    let isPlaying = false;
 
     toggleBtn.addEventListener("click", () => {
-      audio.muted = !audio.muted;
-      toggleBtn.textContent = audio.muted ? "🔇" : "🔊";
+      if (isPlaying) {
+        audio.pause();
+        toggleBtn.textContent = "🔇";
+      } else {
+        audio.play().catch(err => console.log("No es pot reproduir automàticament: ", err));
+        toggleBtn.textContent = "🔊";
+      }
+      isPlaying = !isPlaying;
     });
   </script>
 </body>
