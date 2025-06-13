@@ -34,12 +34,11 @@
 
     html, body {
       margin: 0;
-      padding: 0;
       height: 100%;
-      overflow: hidden;
       font-family: var(--font-family);
       color: white;
       background: #000;
+      overflow: hidden;
     }
 
     .hero {
@@ -75,6 +74,7 @@
       font-size: 2.5rem;
       margin: 0 0 0.5rem;
       text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+      word-break: break-word;
     }
 
     p {
@@ -100,9 +100,6 @@
     }
 
     footer {
-      position: absolute;
-      bottom: 0;
-      width: 100%;
       background: #001f2b;
       padding: 1rem;
       text-align: center;
@@ -125,6 +122,7 @@
     }
   </style>
 </head>
+
 <body>
   <header>
     <h1 style="display: none;">Mar Obert – Associació de navegació inclusiva a Vilanova i la Geltrú</h1>
@@ -135,7 +133,7 @@
 
     <div class="content">
       <img src="logoblanc.png" alt="Logo Mar Obert" class="logo">
-      <h2 style="white-space: pre-line;">Benvingut a\nMar Obert</h2>
+      <h2>Benvingut a <br>Mar Obert</h2>
       <p>Associació de navegació adaptada i activitats inclusives per a persones amb discapacitat a <strong>Vilanova i la Geltrú</strong>.</p>
 
       <a href="https://marobert.org" class="btn">Accedeix al web oficial</a>
@@ -146,19 +144,20 @@
         src="https://lottie.host/7b8571f8-936c-4e9e-bc42-dfef878d8d0f/UA93ikcsg6.lottie"
         background="transparent"
         speed="1"
-        style="width: 200px; height: 200px; margin: auto;"
+        style="width: 220px; height: 220px; margin: auto;"
         loop
         autoplay>
       </dotlottie-player>
     </div>
   </main>
 
-  <audio id="background-audio" autoplay loop>
+  <audio id="background-audio" loop>
     <source src="/audioweb.mp3" type="audio/mpeg">
   </audio>
 
   <footer>
-    © 2025 Mar Obert – Navegació inclusiva des de Vilanova i la Geltrú<br>
+    © 2025 Mar Obert – Navegació inclusiva des de Vilanova i la Geltrú
+    <br>
     <button id="toggle-audio" aria-label="Control de l'àudio">🔊</button>
   </footer>
 
@@ -184,12 +183,16 @@
     const audio = document.getElementById("background-audio");
     const toggleBtn = document.getElementById("toggle-audio");
 
-    if (toggleBtn) {
-      toggleBtn.addEventListener("click", () => {
-        audio.muted = !audio.muted;
-        toggleBtn.textContent = audio.muted ? "🔇" : "🔊";
-      });
-    }
+    // Inici en silenci
+    audio.muted = true;
+
+    toggleBtn.addEventListener("click", () => {
+      if (audio.paused) {
+        audio.play();
+      }
+      audio.muted = !audio.muted;
+      toggleBtn.textContent = audio.muted ? "🔇" : "🔊";
+    });
   </script>
 </body>
 </html>
