@@ -30,6 +30,9 @@
   <!-- Font -->
   <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&display=swap" rel="stylesheet">
 
+  <!-- Lottie player -->
+  <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
+
   <style>
     :root {
       --primary-color: #00AEF0;
@@ -107,17 +110,6 @@
       transform: scale(1.04);
     }
 
-    .wheel {
-      font-size: 3rem;
-      margin: 1.5rem auto 0;
-      animation: spin 2s linear infinite;
-    }
-
-    @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-
     footer {
       background: #001f2b;
       padding: 1rem;
@@ -149,7 +141,16 @@
       <a href="https://marobert.org" class="btn">Accedeix al web oficial</a>
 
       <p id="loading-text">Carregant recursos... preparant el mar per a tu 🌊</p>
-      <div class="wheel" aria-hidden="true">🧭</div>
+
+      <!-- Animació Lottie -->
+      <dotlottie-player
+        src="https://lottie.host/6b7f2d29-167a-4a6b-900e-418f82bba03f/rOJWfZDlCY.lottie"
+        background="transparent"
+        speed="1"
+        style="width: 300px; height: 300px; margin: auto;"
+        loop
+        autoplay>
+      </dotlottie-player>
 
       <!-- Text SEO visible -->
       <div style="margin-top: 2rem;">
@@ -180,7 +181,7 @@
 
     setTimeout(() => {
       window.location.href = 'https://marobert.org';
-    }, 10000); // Redirecció als 10 segons
+    }, 10000);
   </script>
 </body>
 </html>
