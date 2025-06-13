@@ -34,23 +34,22 @@
 
     html, body {
       margin: 0;
+      padding: 0;
       height: 100%;
+      overflow: hidden;
       font-family: var(--font-family);
       color: white;
       background: #000;
-      overflow: hidden;
     }
 
     .hero {
       background: url('Fons Mar Obert.jpg') center/cover no-repeat;
       position: relative;
       height: 100vh;
-      width: 100vw;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
-      overflow: hidden;
     }
 
     .overlay {
@@ -76,12 +75,6 @@
       font-size: 2.5rem;
       margin: 0 0 0.5rem;
       text-shadow: 0 2px 4px rgba(0,0,0,0.5);
-      word-break: break-word;
-    }
-
-    h2 {
-      display: block;
-      white-space: pre-line;
     }
 
     p {
@@ -107,6 +100,9 @@
     }
 
     footer {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
       background: #001f2b;
       padding: 1rem;
       text-align: center;
@@ -127,13 +123,8 @@
       p  { font-size: 1.2rem; }
       .btn { padding: 1rem 2rem; font-size: 1.1rem; }
     }
-
-    .seo-hidden {
-      display: none;
-    }
   </style>
 </head>
-
 <body>
   <header>
     <h1 style="display: none;">Mar Obert – Associació de navegació inclusiva a Vilanova i la Geltrú</h1>
@@ -144,39 +135,30 @@
 
     <div class="content">
       <img src="logoblanc.png" alt="Logo Mar Obert" class="logo">
-      <h2>Benvingut a\nMar Obert</h2>
+      <h2 style="white-space: pre-line;">Benvingut a\nMar Obert</h2>
       <p>Associació de navegació adaptada i activitats inclusives per a persones amb discapacitat a <strong>Vilanova i la Geltrú</strong>.</p>
 
       <a href="https://marobert.org" class="btn">Accedeix al web oficial</a>
 
       <p id="loading-text">Carregant recursos... preparant el mar per a tu 🌊</p>
 
-      <!-- Nova animació Lottie -->
       <dotlottie-player
         src="https://lottie.host/7b8571f8-936c-4e9e-bc42-dfef878d8d0f/UA93ikcsg6.lottie"
         background="transparent"
         speed="1"
-        style="width: 300px; height: 300px; margin: auto;"
+        style="width: 200px; height: 200px; margin: auto;"
         loop
         autoplay>
       </dotlottie-player>
-
-      <!-- Text SEO ocult -->
-      <div class="seo-hidden">
-        <p><strong>Mar Obert</strong> promou la inclusió social a través d’activitats al mar. Organitzem <strong>sortides en vaixell adaptades</strong>, <strong>vela inclusiva</strong> i tallers per fomentar el benestar i l’accessibilitat.</p>
-        <p>Si busques una <strong>associació inclusiva</strong> de mar a Catalunya, Mar Obert és el teu port segur. Participa, col·labora o fes-te voluntari!</p>
-      </div>
     </div>
   </main>
 
-  <!-- Àudio ambiental -->
-  <audio id="background-audio" loop>
+  <audio id="background-audio" autoplay loop>
     <source src="/audioweb.mp3" type="audio/mpeg">
   </audio>
 
   <footer>
-    © 2025 Mar Obert – Navegació inclusiva des de Vilanova i la Geltrú
-    <br>
+    © 2025 Mar Obert – Navegació inclusiva des de Vilanova i la Geltrú<br>
     <button id="toggle-audio" aria-label="Control de l'àudio">🔊</button>
   </footer>
 
@@ -199,21 +181,15 @@
       window.location.href = 'https://marobert.org';
     }, 10000);
 
-    // Control de l'àudio
     const audio = document.getElementById("background-audio");
     const toggleBtn = document.getElementById("toggle-audio");
-    let isPlaying = false;
 
-    toggleBtn.addEventListener("click", () => {
-      if (isPlaying) {
-        audio.pause();
-        toggleBtn.textContent = "🔇";
-      } else {
-        audio.play().catch(err => console.log("No es pot reproduir automàticament: ", err));
-        toggleBtn.textContent = "🔊";
-      }
-      isPlaying = !isPlaying;
-    });
+    if (toggleBtn) {
+      toggleBtn.addEventListener("click", () => {
+        audio.muted = !audio.muted;
+        toggleBtn.textContent = audio.muted ? "🔇" : "🔊";
+      });
+    }
   </script>
 </body>
 </html>
