@@ -44,11 +44,9 @@
       background: url('Fons Mar Obert.jpg') center/cover no-repeat;
       position: relative;
       min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      height: 100dvh;
+      overflow: hidden;
       text-align: center;
-      margin-bottom: 80px; /* evita que el footer tapi contingut */
     }
 
     .overlay {
@@ -62,7 +60,6 @@
       z-index: 1;
       padding: 1rem;
       max-width: 90%;
-      padding-bottom: 4rem; /* espai addicional per no tapar el text */
     }
 
     .logo {
@@ -75,6 +72,17 @@
       font-size: 2.5rem;
       margin: 0 0 0.5rem;
       text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    }
+
+    .title-part1::after {
+      content: "";
+    }
+
+    @media (max-width: 480px) {
+      .title-part1::after {
+        content: "\A";
+        white-space: pre;
+      }
     }
 
     p {
@@ -120,12 +128,6 @@
       color: var(--primary-color);
       transform: scale(1.2);
     }
-
-    @media (min-width: 768px) {
-      h1, h2 { font-size: 3rem; }
-      p  { font-size: 1.2rem; }
-      .btn { padding: 1rem 2rem; font-size: 1.1rem; }
-    }
   </style>
 </head>
 
@@ -139,7 +141,10 @@
 
     <div class="content">
       <img src="logoblanc.png" alt="Logo Mar Obert" class="logo">
-      <h2>Benvingut a Mar Obert</h2>
+      <h2>
+        <span class="title-part1">Benvingut a</span> <span class="title-part2">Mar Obert</span>
+      </h2>
+
       <p>Associació de navegació adaptada i activitats inclusives per a persones amb discapacitat a <strong>Vilanova i la Geltrú</strong>.</p>
 
       <a href="https://marobert.org" class="btn">Accedeix al web oficial</a>
@@ -156,15 +161,15 @@
         autoplay>
       </dotlottie-player>
 
-      <!-- Text SEO visible -->
-      <div style="margin-top: 2rem;">
+      <!-- Text SEO ocult però indexable -->
+      <div style="position: absolute; left: -9999px; height: 1px; overflow: hidden;">
         <p><strong>Mar Obert</strong> promou la inclusió social a través d’activitats al mar. Organitzem <strong>sortides en vaixell adaptades</strong>, <strong>vela inclusiva</strong> i tallers per fomentar el benestar i l’accessibilitat.</p>
         <p>Si busques una <strong>associació inclusiva</strong> de mar a Catalunya, Mar Obert és el teu port segur. Participa, col·labora o fes-te voluntari!</p>
       </div>
     </div>
   </main>
 
-  <!-- Àudio ambiental -->
+  <!-- Àudio ambiental (inicialment silenciat) -->
   <audio id="background-audio" autoplay loop muted>
     <source src="/audioweb.mp3" type="audio/mpeg">
   </audio>
