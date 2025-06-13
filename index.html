@@ -108,9 +108,15 @@
       margin-top: 0.5rem;
       background: none;
       border: none;
-      color: white;
       font-size: 1.5rem;
       cursor: pointer;
+      transition: transform 0.2s ease, color 0.3s ease;
+      color: white;
+    }
+
+    #toggle-audio.active {
+      color: var(--primary-color);
+      transform: scale(1.3);
     }
 
     @media (min-width: 768px) {
@@ -156,7 +162,7 @@
     </div>
   </main>
 
-  <!-- Àudio ambiental -->
+  <!-- Àudio ambiental (inicialment silenciat) -->
   <audio id="background-audio" autoplay loop muted>
     <source src="/audioweb.mp3" type="audio/mpeg">
   </audio>
@@ -186,22 +192,15 @@
       window.location.href = 'https://marobert.org';
     }, 10000);
 
-    // Activació del so després de càrrega (desactiva muted)
-    window.addEventListener('DOMContentLoaded', () => {
-      const audio = document.getElementById("background-audio");
-      audio.muted = false;
-      audio.play().catch(e => {
-        console.warn("Autoplay bloquejat pel navegador. L’usuari ha de fer clic per activar el so.", e);
-      });
-    });
-
-    // Control de l'àudio amb botó
+    // Control de l'àudio com easter egg
     const audio = document.getElementById("background-audio");
     const toggleBtn = document.getElementById("toggle-audio");
 
     toggleBtn.addEventListener("click", () => {
       audio.muted = !audio.muted;
+      toggleBtn.classList.toggle("active", !audio.muted);
       toggleBtn.textContent = audio.muted ? "🔇" : "🔊";
+      audio.play().catch(() => {});
     });
   </script>
 </body>
