@@ -157,7 +157,7 @@
   </main>
 
   <!-- Àudio ambiental -->
-  <audio id="background-audio" autoplay loop>
+  <audio id="background-audio" autoplay loop muted>
     <source src="/audioweb.mp3" type="audio/mpeg">
   </audio>
 
@@ -186,7 +186,16 @@
       window.location.href = 'https://marobert.org';
     }, 10000);
 
-    // Control de l'àudio
+    // Activació del so després de càrrega (desactiva muted)
+    window.addEventListener('DOMContentLoaded', () => {
+      const audio = document.getElementById("background-audio");
+      audio.muted = false;
+      audio.play().catch(e => {
+        console.warn("Autoplay bloquejat pel navegador. L’usuari ha de fer clic per activar el so.", e);
+      });
+    });
+
+    // Control de l'àudio amb botó
     const audio = document.getElementById("background-audio");
     const toggleBtn = document.getElementById("toggle-audio");
 
