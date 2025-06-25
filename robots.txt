@@ -1,3 +1,4 @@
 User-agent: *
-Allow: /
+Disallow:
+
 Sitemap: https://info.marobert.org/sitemap.xml
