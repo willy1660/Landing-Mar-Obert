@@ -5,21 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mar Obert | Navegació inclusiva a Vilanova i la Geltrú</title>
   <meta name="description" content="Mar Obert és una associació sense ànim de lucre que organitza activitats inclusives de navegació per a persones amb discapacitat a Vilanova i la Geltrú.">
+  <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#00AEF0">
   <meta property="og:title" content="Mar Obert | Navegació inclusiva a Vilanova i la Geltrú">
   <meta property="og:description" content="Descobreix Mar Obert, l’associació que obre el mar a tothom amb activitats adaptades a Vilanova i la Geltrú.">
   <meta property="og:image" content="https://info.marobert.org/og-marobert.png">
   <meta property="og:url" content="https://info.marobert.org">
   <meta property="og:type" content="website">
-
-  <!-- Google Tag -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QTH1FSEBJ3"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-QTH1FSEBJ3');
-  </script>
 
   <link rel="icon" href="/favicon.png?v=2" type="image/png">
   <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&display=swap" rel="stylesheet">
@@ -116,6 +108,17 @@
       font-size: 0.8rem;
     }
 
+    .seo-extra {
+      margin-top: 2rem;
+      font-size: 0.95rem;
+      color: #e0e0e0;
+    }
+
+    .seo-extra a {
+      color: #00AEF0;
+      text-decoration: underline;
+    }
+
     #toggle-audio {
       margin-top: 0.5rem;
       background: none;
@@ -123,15 +126,6 @@
       color: white;
       font-size: 1.4rem;
       cursor: pointer;
-    }
-
-    .seo-hidden {
-      position: absolute;
-      left: -9999px;
-      top: auto;
-      width: 1px;
-      height: 1px;
-      overflow: hidden;
     }
 
     @media (min-width: 768px) {
@@ -164,9 +158,10 @@
         loop autoplay>
       </dotlottie-player>
 
-      <div class="seo-hidden">
-        <p><strong>Mar Obert</strong> promou la inclusió social a través d’activitats al mar. Organitzem <strong>sortides en vaixell adaptades</strong>, <strong>vela inclusiva</strong> i tallers per fomentar el benestar i l’accessibilitat.</p>
-        <p>Si busques una <strong>associació inclusiva</strong> de mar a Catalunya, Mar Obert és el teu port segur. Participa, col·labora o fes-te voluntari!</p>
+      <div class="seo-extra">
+        <p>
+          <strong>Mar Obert</strong> és una associació sense ànim de lucre que promou la <strong>navegació inclusiva</strong> i l’<strong>accessibilitat al mar</strong> per a persones amb discapacitat. Operem des de <strong>Vilanova i la Geltrú</strong>, i treballem per fer el mar un espai obert per a tothom. Aquesta és la nostra pàgina institucional, pensada per donar a conèixer el projecte. Si vols saber més, visita el web principal a <a href="https://marobert.org">marobert.org</a>.
+        </p>
       </div>
 
       <button id="toggle-audio" aria-label="Control de l'àudio">🔊</button>
