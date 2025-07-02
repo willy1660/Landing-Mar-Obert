@@ -128,23 +128,54 @@
 
     .mapa {
       background: #001f2b;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    .mapa iframe {
+      width: 90%;
+      max-width: 1000px;
+      height: 500px;
+      border: none;
+      border-radius: 12px;
+    }
+
+    .video {
+      background: #000;
+      color: white;
       padding: 4rem 1rem;
       text-align: center;
     }
 
-    .mapa h2 {
+    .video h2 {
       font-family: var(--font-title);
       font-size: 2rem;
       margin-bottom: 1rem;
     }
 
-    .mapa iframe {
+    .video p {
+      font-size: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 ratio */
+      height: 0;
+      overflow: hidden;
+      max-width: 90%;
+      margin: auto;
+      border-radius: 12px;
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 100%;
-      max-width: 900px;
-      height: 500px;
+      height: 100%;
       border: none;
-      border-radius: 16px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+      border-radius: 12px;
     }
 
     footer {
@@ -212,8 +243,20 @@
 
   <section class="mapa">
     <h2>Ubicació</h2>
-    <p>Ens trobaràs al Port de Vilanova i la Geltrú, on el mar es converteix en espai d'inclusió.</p>
     <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1zDZWsf2v-Tzsq1E_8kX6BmngZlLecns&ehbc=2E312F&noprof=1" allowfullscreen></iframe>
+  </section>
+
+  <section class="video">
+    <h2>Entrevista a Canal Blau</h2>
+    <p>El nostre president i vicepresident expliquen la missió de Mar Obert en aquesta entrevista a la televisió local.</p>
+    <div class="video-container">
+      <iframe
+        src="https://www.youtube.com/embed/nchv0fDd3eU?start=685&rel=0"
+        title="Entrevista Mar Obert a Canal Blau"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+    </div>
   </section>
 
   <footer>
