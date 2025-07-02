@@ -22,8 +22,12 @@
     :root {
       --primary-color: #00AEF0;
       --primary-color-hover: #008AC2;
-      --overlay-color: rgba(0, 0, 0, 0.55);
+      --overlay-color: rgba(0, 0, 0, 0.6);
       --font-family: 'League Spartan', sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
     }
 
     html, body {
@@ -53,14 +57,15 @@
     .content {
       position: relative;
       z-index: 1;
-      padding: 1rem;
+      padding: 2rem;
       max-width: 90%;
     }
 
     .logo {
       max-width: 160px;
       height: auto;
-      margin-bottom: 1rem;
+      margin-bottom: 1.2rem;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
     }
 
     h1, h2, h3 {
@@ -68,39 +73,41 @@
     }
 
     h1 {
-      font-size: 2.2rem;
+      font-size: 2.4rem;
       margin-bottom: 0.5rem;
     }
 
     h2 {
-      font-size: 1.8rem;
-      margin-top: 2rem;
+      font-size: 2rem;
+      margin-top: 3rem;
+      margin-bottom: 1rem;
     }
 
     p {
-      font-size: 1rem;
-      line-height: 1.5;
-      margin-bottom: 1rem;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 1.2rem;
     }
 
     .btn {
       display: inline-block;
-      padding: 0.6rem 1.2rem;
-      font-size: 1rem;
+      padding: 0.8rem 1.5rem;
+      font-size: 1.1rem;
       background: var(--primary-color);
       color: #fff;
       text-decoration: none;
-      border-radius: 1rem;
+      border-radius: 1.5rem;
       transition: background 0.3s, transform 0.2s;
+      box-shadow: 0 2px 6px rgba(0, 174, 240, 0.4);
     }
 
     .btn:hover {
       background: var(--primary-color-hover);
-      transform: scale(1.04);
+      transform: scale(1.05);
     }
 
     section {
-      padding: 2rem 1rem;
+      padding: 3rem 1.5rem;
       max-width: 800px;
       margin: auto;
       text-align: center;
@@ -110,7 +117,7 @@
       background: #001f2b;
       padding: 1rem;
       text-align: center;
-      font-size: 0.8rem;
+      font-size: 0.9rem;
     }
   </style>
 </head>
@@ -127,7 +134,7 @@
         src="https://lottie.host/7b8571f8-936c-4e9e-bc42-dfef878d8d0f/UA93ikcsg6.lottie"
         background="transparent"
         speed="1"
-        style="width: 200px; height: 200px; margin: auto;"
+        style="width: 200px; height: 200px; margin: auto; margin-top: 1.5rem"
         loop autoplay>
       </dotlottie-player>
     </div>
@@ -136,16 +143,22 @@
   <section id="que-es">
     <h2>Què és Mar Obert?</h2>
     <p>Som una entitat sense ànim de lucre que promou activitats inclusives de navegació per a persones amb discapacitat. A través de la vela adaptada, fomentem la igualtat d’oportunitats i l’accés al mar per a tothom.</p>
+    <p>Neix a Vilanova i la Geltrú amb la voluntat de ser referent en accessibilitat al mar i promoure l’autonomia i el benestar de persones amb mobilitat reduïda, discapacitat intel·lectual o altres diversitats funcionals.</p>
   </section>
 
   <section id="activitats">
     <h2>Activitats</h2>
-    <p>Organitzem sortides amb vaixell adaptat, tallers de sensibilització i accions de voluntariat actiu per crear una comunitat inclusiva i activa al litoral de Vilanova i la Geltrú.</p>
+    <p>Organitzem sortides amb vaixell adaptat, sessions de navegació inclusiva, tallers de sensibilització i activitats educatives vinculades al mar. Comptem amb voluntaris formats, professionals del sector i una embarcació adaptada per garantir la seguretat i la comoditat de totes les persones participants.</p>
+  </section>
+
+  <section id="impacte">
+    <h2>Impacte Social</h2>
+    <p>Mar Obert no només ofereix experiències úniques al mar, sinó que construeix comunitat, autoestima i oportunitats. L’accés al mar, per moltes persones, suposa trencar barreres físiques i emocionals. El projecte contribueix a la inclusió, la convivència i el dret universal al lleure.</p>
   </section>
 
   <section id="colabora">
     <h2>Com col·laborar?</h2>
-    <p>Pots participar com a voluntari, ajudar econòmicament o compartir el nostre projecte. Visita l'app oficial per conèixer les properes activitats i apuntar-te!</p>
+    <p>Pots participar com a voluntari o fer una donació per ajudar a finançar sortides, material adaptat i activitats formatives. També pots sumar-te com a soci o ajudar-nos a difondre la nostra tasca.</p>
     <a href="https://marobert.org" class="btn">Vull formar part</a>
   </section>
 
