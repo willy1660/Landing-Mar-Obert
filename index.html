@@ -1,46 +1,48 @@
 <!DOCTYPE html>
 <html lang="ca">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mar Obert | Navegació Inclusiva</title>
-  <meta name="description" content="Mar Obert és una associació de Vilanova i la Geltrú que promou la navegació inclusiva i les activitats adaptades per a tothom. Descobreix qui som i com treballem per un mar més accessible!">
-  <link rel="canonical" href="https://info.marobert.org">
-  <meta name="robots" content="index, follow">
-  <meta property="og:title" content="Mar Obert | Navegació Inclusiva">
-  <meta property="og:description" content="Descobreix Mar Obert, una associació de Vilanova i la Geltrú que obre el mar a tothom.">
-  <meta property="og:image" content="https://info.marobert.org/og-marobert.png">
-  <meta property="og:url" content="https://info.marobert.org">
-  <meta property="og:type" content="website">
-
-  <link rel="icon" href="/favicon.png" type="image/png">
-  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&family=Garet&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mar Obert | Navegació inclusiva</title>
+  <meta name="description" content="Associació que promou la navegació inclusiva a Vilanova i la Geltrú.">
+  <link rel="icon" href="/favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Garet&display=swap" rel="stylesheet">
 
   <style>
     :root {
       --primary: #00AEF0;
-      --dark-bg: #000;
-      --card-bg: #071e2e;
+      --bg-dark: #000;
+      --card-bg: #06202f;
       --font-title: 'League Spartan', sans-serif;
-      --font-body: 'Garet', sans-serif;
+      --font-text: 'Garet', sans-serif;
     }
 
-    body {
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
       margin: 0;
-      background-color: var(--dark-bg);
+      padding: 0;
+      font-family: var(--font-text);
       color: white;
-      font-family: var(--font-body);
+      background: url('Fons Mar Obert.jpg') center/cover fixed no-repeat;
+    }
+
+    .overlay {
+      background: rgba(0, 0, 0, 0.7);
+      padding: 2rem;
     }
 
     header {
-      background: url('Fons Mar Obert.jpg') center/cover no-repeat;
-      padding: 4rem 1rem;
       text-align: center;
+      padding: 4rem 1rem 3rem;
     }
 
     header img {
-      width: 100px;
-      margin-bottom: 1rem;
+      max-width: 120px;
+      margin-bottom: 1.5rem;
     }
 
     header h1 {
@@ -50,144 +52,145 @@
     }
 
     header p {
-      max-width: 600px;
-      margin: 0 auto 1.5rem;
-      line-height: 1.6;
+      font-size: 1.1rem;
+      margin: 0 auto 1rem;
+      max-width: 700px;
     }
 
-    .cta-button {
-      background-color: var(--primary);
-      border: none;
+    .btn {
+      display: inline-block;
+      margin-top: 1rem;
       padding: 0.8rem 1.6rem;
-      font-size: 1rem;
-      color: white;
-      border-radius: 999px;
+      background: var(--primary);
+      color: #fff;
       text-decoration: none;
+      border-radius: 2rem;
       font-weight: bold;
     }
 
-    main {
+    section {
       padding: 3rem 1rem;
-      max-width: 1200px;
-      margin: auto;
+      background: var(--bg-dark);
+      text-align: center;
     }
 
-    h2 {
+    section h2 {
       font-family: var(--font-title);
       font-size: 2rem;
       margin-bottom: 2rem;
-      text-align: center;
     }
 
     .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      display: flex;
       gap: 1.5rem;
+      overflow-x: auto;
+      padding: 1rem 0;
+      justify-content: center;
     }
 
     .card {
-      background-color: var(--card-bg);
+      background: var(--card-bg);
       border-radius: 1rem;
       padding: 1.5rem;
-      text-align: center;
-      box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
+      width: 260px;
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
     }
 
     .card img {
-      max-height: 100px;
+      height: 80px;
       margin-bottom: 1rem;
     }
 
     .card p {
+      margin: 0;
       font-size: 0.95rem;
-      line-height: 1.5;
     }
 
     .valors {
-      margin-top: 4rem;
-      text-align: center;
-    }
-
-    .valors ul {
-      list-style: none;
-      padding: 0;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 1rem;
+      margin-top: 1.5rem;
     }
 
-    .valors li {
-      background: #003344;
+    .valor {
+      background: #022531;
       padding: 0.8rem 1.2rem;
-      border-radius: 999px;
+      border-radius: 1.5rem;
       font-weight: bold;
-      font-family: var(--font-title);
-      font-size: 1rem;
+      font-size: 0.95rem;
     }
 
     footer {
-      margin-top: 4rem;
-      padding: 2rem;
+      background: #001f2b;
       text-align: center;
-      font-size: 0.85rem;
-      background: #001820;
+      padding: 1rem;
+      font-size: 0.8rem;
+    }
+
+    @media (min-width: 768px) {
+      header h1 { font-size: 3rem; }
+      header p { font-size: 1.2rem; }
+      .card { width: 280px; }
     }
   </style>
 </head>
 
 <body>
-  <header>
-    <img src="logoblanc.png" alt="Mar Obert Logo">
-    <h1>Benvingut a Mar Obert</h1>
-    <p>
-      Mar Obert és una associació sense ànim de lucre que promou la navegació adaptada i inclusiva a Vilanova i la Geltrú per a persones amb discapacitat. <br>
-      <strong>Junts posem rumb cap a les oportunitats.</strong>
-    </p>
-    <a href="https://marobert.org" class="cta-button">Visita la pàgina oficial</a>
-  </header>
+  <div class="overlay">
+    <header>
+      <img src="logoblanc.png" alt="Logo Mar Obert">
+      <h1>Benvingut a Mar Obert</h1>
+      <p>
+        Mar Obert és una associació sense ànim de lucre que promou la navegació adaptada i inclusiva a Vilanova i la Geltrú per a persones amb discapacitat.<br>
+        <strong>Junts posem rumb cap a les oportunitats.</strong>
+      </p>
+      <a href="https://marobert.org" class="btn">Visita la pàgina oficial</a>
+    </header>
+  </div>
 
-  <main>
+  <section>
     <h2>Què fem a Mar Obert?</h2>
     <div class="cards">
       <div class="card">
-        <img src="ChatGPT Image 16 jun 2025, 09_05_57.png" alt="Activitats inclusives">
+        <img src="ChatGPT Image 16 jun 2025, 09_34_54.png" alt="">
         <p>Activitats accessibles, segures i adaptades a cada persona.</p>
       </div>
       <div class="card">
-        <img src="ChatGPT Image 16 jun 2025, 09_34_54.png" alt="Sortides navegació">
+        <img src="ChatGPT Image 16 jun 2025, 09_05_57.png" alt="">
         <p>Organitzem sortides de navegació i tallers per a col·lectius diversos.</p>
       </div>
       <div class="card">
-        <img src="ChatGPT Image 16 jun 2025, 09_35_02.png" alt="Inclusió real">
+        <img src="ChatGPT Image 16 jun 2025, 09_35_02.png" alt="">
         <p>Creem espais d'inclusió real i compartim el mar.</p>
       </div>
       <div class="card">
-        <img src="Ahoy!.png" alt="Comunitat marinera">
+        <img src="Ahoy!.png" alt="">
         <p>Impulsem una comunitat marinera inclusiva i col·laborativa.</p>
       </div>
-      <div class="card">
-        <img src="Activitats.png" alt="Tallers i educació marina">
-        <p>Fomentem activitats lúdiques i educatives amb valors ambientals.</p>
-      </div>
     </div>
+  </section>
 
-    <section class="valors">
-      <h2>Els nostres valors</h2>
-      <ul>
-        <li>Inclusió</li>
-        <li>Comunitat</li>
-        <li>Transparència</li>
-        <li>Compromís</li>
-        <li>Innovació</li>
-        <li>Consciència</li>
-        <li>Llibertat</li>
-      </ul>
-    </section>
-  </main>
+  <section>
+    <h2>Els nostres valors</h2>
+    <div class="valors">
+      <div class="valor">Inclusió</div>
+      <div class="valor">Comunitat</div>
+      <div class="valor">Transparència</div>
+      <div class="valor">Compromís</div>
+      <div class="valor">Innovació</div>
+      <div class="valor">Consciència</div>
+      <div class="valor">Llibertat</div>
+    </div>
+  </section>
 
   <footer>
-    © 2025 Mar Obert. Navegació inclusiva des de Vilanova i la Geltrú.
+    © 2025 Mar Obert – Navegació inclusiva des de Vilanova i la Geltrú
   </footer>
 </body>
 </html>
