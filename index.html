@@ -66,6 +66,12 @@
       text-decoration: none;
       border-radius: 2rem;
       font-weight: bold;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    .btn:hover {
+      background: #008ac2;
+      transform: scale(1.05);
     }
 
     section {
@@ -98,6 +104,12 @@
       flex-direction: column;
       align-items: center;
       box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 18px rgba(0,0,0,0.6);
     }
 
     .card img {
@@ -126,6 +138,26 @@
       font-size: 0.95rem;
     }
 
+    .video {
+      background: #000c13;
+      padding: 3rem 1rem 2rem;
+    }
+
+    .video h2 {
+      font-family: var(--font-title);
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .video iframe {
+      max-width: 640px;
+      width: 90%;
+      height: 360px;
+      border: none;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+    }
+
     .mapa {
       background: #001f2b;
       padding: 2rem 1rem;
@@ -133,49 +165,12 @@
     }
 
     .mapa iframe {
-      width: 90%;
-      max-width: 1000px;
-      height: 500px;
-      border: none;
-      border-radius: 12px;
-    }
-
-    .video {
-      background: #000;
-      color: white;
-      padding: 4rem 1rem;
-      text-align: center;
-    }
-
-    .video h2 {
-      font-family: var(--font-title);
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-
-    .video p {
-      font-size: 1rem;
-      margin-bottom: 2rem;
-    }
-
-    .video-container {
-      position: relative;
-      padding-bottom: 56.25%; /* 16:9 ratio */
-      height: 0;
-      overflow: hidden;
       max-width: 90%;
-      margin: auto;
-      border-radius: 12px;
-    }
-
-    .video-container iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+      width: 800px;
+      height: 480px;
       border: none;
       border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
     }
 
     footer {
@@ -241,22 +236,14 @@
     </div>
   </section>
 
+  <section class="video">
+    <h2>Entrevista a Canal Blau</h2>
+    <iframe src="https://www.youtube.com/embed/nchv0fDd3eU?start=685" title="Entrevista Mar Obert a Canal Blau" allowfullscreen></iframe>
+  </section>
+
   <section class="mapa">
     <h2>Ubicació</h2>
     <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1zDZWsf2v-Tzsq1E_8kX6BmngZlLecns&ehbc=2E312F&noprof=1" allowfullscreen></iframe>
-  </section>
-
-  <section class="video">
-    <h2>Entrevista a Canal Blau</h2>
-    <p>El nostre president i vicepresident expliquen la missió de Mar Obert en aquesta entrevista a la televisió local.</p>
-    <div class="video-container">
-      <iframe
-        src="https://www.youtube.com/embed/nchv0fDd3eU?start=685&rel=0"
-        title="Entrevista Mar Obert a Canal Blau"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen>
-      </iframe>
-    </div>
   </section>
 
   <footer>
