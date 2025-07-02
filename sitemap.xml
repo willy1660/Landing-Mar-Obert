@@ -5,20 +5,20 @@
   xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
                       http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
-  <!-- Landing SEO -->
+  <!-- Landing SEO amb contingut ampliat -->
   <url>
     <loc>https://info.marobert.org/</loc>
-    <lastmod>2025-06-25</lastmod>
+    <lastmod>2025-07-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
 
-  <!-- Web principal (Glide) -->
+  <!-- Web principal de l'app (no indexable però referenciat) -->
   <url>
     <loc>https://marobert.org/</loc>
-    <lastmod>2025-06-25</lastmod>
+    <lastmod>2025-07-02</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.4</priority>
   </url>
 
 </urlset>
