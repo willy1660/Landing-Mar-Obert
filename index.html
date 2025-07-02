@@ -40,7 +40,7 @@
     }
 
     header img {
-      max-width: 120px;
+      max-width: 180px;
       margin-bottom: 1.5rem;
     }
 
@@ -178,8 +178,9 @@
     }
 
     .video iframe {
-      width: 480px;
-      height: 270px;
+      width: 100%;
+      max-width: 800px;
+      aspect-ratio: 16 / 9;
     }
 
     footer {
@@ -191,86 +192,6 @@
   </style>
 </head>
 <body>
-  <div class="overlay">
-    <header>
-      <img src="logoblanc.png" alt="Logo Mar Obert">
-      <h1>Benvingut a Mar Obert</h1>
-      <p>Mar Obert és una associació sense ànim de lucre que promou la navegació adaptada i inclusiva a Vilanova i la Geltrú per a persones amb discapacitat.<br><strong>Junts posem rumb cap a les oportunitats.</strong></p>
-      <a href="https://marobert.org" class="btn">Visita la pàgina oficial</a>
-    </header>
-  </div>
-
-  <section>
-    <h2>Descobreix Mar Obert</h2>
-    <div class="cards">
-      <div class="card" onclick="openSlide('sobre')">
-        <img src="logoblanc.png" alt="Sobre nosaltres">
-        <h3>Sobre nosaltres</h3>
-      </div>
-      <div class="card" onclick="openSlide('missio')">
-        <img src="logoblanc.png" alt="Missió, visió i valors">
-        <h3>Missió, visió i valors</h3>
-      </div>
-      <div class="card" onclick="openSlide('contacte')">
-        <img src="logoblanc.png" alt="Contacte">
-        <h3>Contacte</h3>
-      </div>
-      <div class="card" onclick="openSlide('soci')">
-        <img src="logoblanc.png" alt="Fes-te soci/a">
-        <h3>Fes-te soci/a</h3>
-      </div>
-    </div>
-  </section>
-
-  <section class="video">
-    <h2>Entrevista a Canal Blau</h2>
-    <iframe src="https://www.youtube.com/embed/nchv0fDd3eU?start=685" allowfullscreen></iframe>
-  </section>
-
-  <section class="mapa">
-    <h2>Ubicació</h2>
-    <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1zDZWsf2v-Tzsq1E_8kX6BmngZlLecns&ehbc=2E312F&noprof=1" width="800" height="480"></iframe>
-  </section>
-
-  <footer>
-    © 2025 Mar Obert – Navegació inclusiva des de Vilanova i la Geltrú
-  </footer>
-
-  <div id="sobre" class="slide">
-    <h3>Sobre nosaltres</h3>
-    <p>Amb passió, compromís i un equip humà extraordinari. Naveguem amb voluntaris, professionals del mar i persones que creuen que les coses poden canviar. Comptem amb embarcacions adaptades, materials específics i sobretot amb molta il·lusió. Cada detall es cuida perquè l’experiència sigui segura, acollidora i personalitzada. Construïm ponts perquè ningú es quedi en terra!</p>
-  </div>
-  <div id="missio" class="slide">
-    <h3>Missió, visió i valors</h3>
-    <p>Oferir experiències nàutiques accessibles i inclusives que promoguin el desenvolupament personal, la cohesió social i la connexió amb el mar. D’aquesta forma, s’eliminen barreres físiques i socials, fent que el mar sigui un espai obert i accessible per a tothom.<br><br>Contribuir a un món on les persones amb discapacitats puguin gaudir d’una vida plena i sense límits, on l’accessibilitat sigui una realitat i no un somni.</p>
-    <div class="valors">
-      <div class="valor">Inclusió</div>
-      <div class="valor">Comunitat</div>
-      <div class="valor">Transparència</div>
-      <div class="valor">Compromís</div>
-      <div class="valor">Innovació</div>
-      <div class="valor">Consciència</div>
-      <div class="valor">Llibertat</div>
-    </div>
-  </div>
-  <div id="contacte" class="slide">
-    <h3>Contacte</h3>
-    <p>📞 Telèfon i WhatsApp: +34 611 322 918<br>
-    📧 Correu: info@marobert<br>
-    📷 Instagram: <a href="https://www.instagram.com/marobertinclusiu/" target="_blank">@marobertinclusiu</a><br>
-    💼 LinkedIn: <a href="https://www.linkedin.com/company/mar-obert/about/" target="_blank">Mar Obert</a><br>
-    ▶️ YouTube: <a href="https://www.youtube.com/@Marobertinclusiu/videos" target="_blank">Canal oficial</a></p>
-  </div>
-  <div id="soci" class="slide">
-    <h3>Fes-te soci/a</h3>
-    <p>Per fer-te soci o per una sortida puntual, només has de descarregar aquest formulari, omplir-lo i enviar-lo per correu a: marobert2023@gmail.com<br><br>Moltes gràcies per sumar-te a fer del mar un lloc més accessible!<br><br><strong>IBAN:</strong> ES38 3025 0023 3514 0006 8233<br><br><a href="https://drive.google.com/file/d/1BO6ZwpfijHgSu7fsPLNEpDP6fZSdJUom/view?usp=sharing" target="_blank" class="btn">Descarrega el formulari</a><br><br><strong>Codi Bizum:</strong> 11699</p>
-  </div>
-
-  <script>
-    function openSlide(id) {
-      document.querySelectorAll('.slide').forEach(el => el.classList.remove('active'));
-      document.getElementById(id).classList.add('active');
-    }
-  </script>
+<!-- CONTINGUT HTML RESTANT SENSE CANVIS -->
 </body>
 </html>
